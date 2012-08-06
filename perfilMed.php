@@ -1,0 +1,146 @@
+<?php
+session_start(); //inicia a sessão
+define("ADMIN",$_SESSION['name']); //Recebe o código e nome do utilizador e tipo de utilizador e guarda na constante ADMIN
+if(!isset($_SESSION['name'])){ //Informa se a variável não foi iniciada
+	header("location:login.php"); // redireciona para a página index.php no caso de login errado
+}
+else { //Se a variável foi iniciada, executa a página de administração
+	include_once('conexao.php'); 
+	list($codU_tmp, $userU_tmp, $tipoU_tmp) = explode("-", ADMIN); //Separa informação da $_SESSION['name'] pelo traço, ex. 1-Pedro-Administrador
+	
+//Imprime tabela de utilizadoresa
+?>
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+    <link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css" />
+    <link href="estilosCSS.css" rel="stylesheet" type="text/css" media="all" /><!-- importa os estilos do ficheiro estilosCSS.css-->    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>.:: Médicos ::.</title>
+    </head>
+    <body>
+    <table width="1000" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr>
+        <td colspan="3" id="bodyCab">
+            <table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tr>
+                <td height="100" id="bodyCabFont">Administração<br />EBMG02</td>
+              </tr>
+              <tr>
+                <td height="33"><font color="#FFFFFF"><b>Utilizador:</b> <?php echo $userU_tmp; ?></font></td>
+              </tr>              
+              <tr>
+                <td height="68" id="textoCabTab">
+                    <?php
+                    if($tipoU_tmp=="Administrador"){ //Se tipo de utilizador é igual a Administrador, aparece o menuAdmin com todas as funcionalidades e permissões e abre a página utilizadores.php caso contrário, não permite que utilizadores normais acessem a esta página
+                        require_once('menuAdmin.php');
+                        menuAdmin("utilizadores");
+                    ?>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                	<table border="0" cellspacing="0" cellpadding="0">
+               			<tr>
+                        	<td id="corpoTop" colspan="3"></td>
+                              </tr>
+                              <tr>
+                                <td width="5" bgcolor="#FFFFFF"></td>                              
+                                    <td bgcolor="#FFFFFF" align="center">
+									     <?php
+									$codMed_tmp=$_GET['codmed'];
+									if ($codMed_tmp == NULL) {
+									echo "<br>** Especifique um Médico **<br>";
+									}
+									else{
+									$sql="select * from t_medicos, t_especialidade where codEsp=esp and codMed = $codMed_tmp";
+									$verPerfMed = mysqli_query ($cn,$sql);
+									$count = mysqli_num_rows($verPerfMed);
+									if ($count == 0) {
+									echo "<br>** Médico inexistente **<br>";
+									}
+									else { 
+										while ($dad=mysqli_fetch_assoc($verPerfMed)) {
+											$nomeM=$dad["nome"];
+											$tipo=$dad["tipoID"];
+											$num=$dad["numID"];
+											$mor=$dad["morada"];
+											$con=$dad["contacto"];
+											$obs=$dad["obs"];
+											$esp=$dad["enome"];
+											}
+										
+									?>
+									<table width="100%" border="0" cellspacing="1" cellpadding="1">
+									<tr><td id="textoCabTabCorpo" colspan="9">Perfil de <?php echo $nomeM ?> </td></tr>
+									<tr><td colspan="9"><div class="adicReg" align="left"><a href="medicos.php">Voltar</a></div></td></tr>
+									<tr>
+									<td class="cabTabperfUtil1" width="180">Nome Completo</td>
+									<td class="cabTabperfUtil2"><?php echo $nomeM ?></td>
+									</tr>
+									<tr>
+									<td class="cabTabperfUtil1" width="180">Especialidade</td>
+									<td class="cabTabperfUtil2"><?php echo $esp ?></td>
+									</tr>
+									<tr>
+									<td class="cabTabperfUtil1" width="180"><?php echo $tipo ?></td>
+									<td class="cabTabperfUtil2"><?php echo $num ?></td>
+									</tr>
+									<tr>
+									<td class="cabTabperfUtil1" width="180">Morada</td>
+									<td class="cabTabperfUtil2"><?php echo $mor ?></td>
+									</tr>
+									<tr>
+									<td class="cabTabperfUtil1" width="180">Contacto</td>
+									<td class="cabTabperfUtil2"><?php echo $con ?></td>
+									</tr>
+									<tr>
+									<td class="cabTabperfUtil1" width="180">Obs</td>
+									<td class="cabTabperfUtil2"><?php echo $obs ?></td>
+									</tr>
+									<tr><td colspan="9"><div class="adicReg" align="right"><a href="alterarMed.php?codEditar=<?php echo $codMed_tmp ?>">Alterar</a></div></td></tr>
+
+									</table>                                                                    
+                                    </td>
+                                    <?php 
+                                    }
+                                    }
+                                    ?>
+                                <td width="5" bgcolor="#FFFFFF"></td>                                
+                              </tr>
+                              <tr>
+                                <td id="corpoRod" colspan="3"></td>
+                              </tr>                       
+                    </table>
+                </td>
+              </tr>       
+            </table>
+           </td>
+      </tr>
+      <tr>
+          <td id="bodyRod">
+            <?php include('rodape.php');?>
+          </td>
+      </tr>  
+    </table>
+    
+    </body>
+    </html>
+    </body>
+    </html>
+
+<?php
+	if ($resultado){
+		mysqli_free_result ($resultado);
+		}
+	mysqli_close($cn); //Fecha ligação à BD
+	
+	}else{ //Se o utilizador não for adminsitrador, redireciona o mesmo para a página de entrada de utilizador registado
+		header("location:index.php");	
+	}	
+}
+?>

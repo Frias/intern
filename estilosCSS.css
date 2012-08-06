@@ -1,0 +1,417 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #C0C4C5 url(imagens/wrapper-bg.png) repeat;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #2E2E2E;
+	text-align: center;
+}
+
+
+#bodyCab{
+	background:url(imagens/fundoCab.png) no-repeat;
+	height:204px;
+	width:auto;
+	vertical-align:top;
+	text-align:center;
+}
+#bodyRod{
+	background:url(imagens/bodyRod.png) no-repeat;
+	height:35px;
+	width:auto;
+	vertical-align: middle;
+	text-align:center;
+	color:#FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:10px;
+}
+#bodyCabFont{
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#FFF;
+	font-weight:bold;
+	font-size:30px;	
+	text-align:center;	
+}
+
+/* Tabelas de páginas referentes a utilizadores e clientes */
+.cabTab{
+	background-color:#931f18;
+	color:#FFF;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:24px;
+	font-weight:bold;
+	min-height:60px;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.cabTabLista{
+	background-color:#931f18;
+	color:#FFF;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align:center;
+	vertical-align:middle;
+	font-weight:bold;
+}
+.cabTabperfUtil1{
+	background-color:#931f18;
+	color:#FFF;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align:right;
+	vertical-align:middle;
+	font-weight:bold;
+}
+.cabTabperfUtil2{
+	background-color:#FFF;
+	color:#000;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align:left;
+	text-decoration:none;
+}
+.tabLista{
+	background-color:#FFF;
+	color:#000;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align:center;
+	text-decoration:none;
+}
+.tabLista a{
+	background-color:#FFF;
+	color:#000;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:11px;
+	text-align:center;
+	text-decoration:none;
+	font-weight:bold;		
+}
+.tabLista a:hover{
+	background-color:#FFF;
+	color:#d65010;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	text-align:center;
+	text-decoration:underline;
+}
+
+.adicReg a{
+	background-color:#FFF;
+	color:#000;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:13px;
+	text-align:left;
+	text-decoration:none;
+	font-weight:bold;		
+}
+.adicReg a:hover{
+	background-color:#FFF;
+	color:#d65010;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	text-align:left;
+	text-decoration:underline;
+}
+
+#textoCabTab{
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#FFF;
+	font-weight:bold;
+	font-size:18px;	
+	text-align:center;	
+}
+#textoCabTabCorpo{
+	background-color:#FFF;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#273237;
+	font-weight:bold;
+	font-size:22px;	
+	text-align:center;	
+}
+#corpoTop{
+	background:url(imagens/corpoTop.png) no-repeat;
+	height:10px;
+	width:900px;
+	vertical-align:top;
+	text-align:center;
+}
+#corpoRod{
+	background:url(imagens/corpoRod.png) no-repeat;
+	height:10px;
+	width:900px;
+	vertical-align:top;
+	text-align:center;
+}
+
+#fundoMenu{
+	background:url(imagens/fundoCab.jpg.png);
+	height:70px;
+	width:910px;
+}
+
+
+.tabFormEsq {
+	color:#666;
+	font-family:'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px;
+	height:1.8em;
+	text-align: right;
+}
+.tabFormDir {
+	color:#666;
+	font-family:'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px;
+	height:1.7em;
+	text-align: left;
+}
+
+.msgErro{
+	color:#F00;
+	font-family:'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	}
+
+
+/** MENU */
+#menu {
+	width: 830px;
+	height: 70px;
+	margin: 0px auto;
+	padding: 0px 40px;
+	background: url(imagens/menu-bg.png);
+}
+
+#menu ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	float: left;
+	margin-right: 10px;
+	padding-left: 5px;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	height: 67px;
+	padding-right: 5px;
+	line-height: 67px;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px #171D21;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #FFFFFF;
+}
+
+#menu a:hover {
+	background: url(imagens/menu-repeatbg.png) repeat-x left top;
+}
+
+#menu span {
+	display: inline-block;
+	height: 67px;
+	padding: 0px 15px 0px 15px;
+}
+
+#menu li.active {
+	background: url(imagens/menu-bgleft.png) no-repeat left top;
+}
+
+#menu li.active a {
+	background: url(imagens/menu-bgright.png) no-repeat right top;
+	text-shadow: 1px 1px 1px #04435D;
+	color: #FFFFFF;
+}
+
+#menu li.active span {
+	background: url(imagens/menu-repeatbg.png) repeat-x left top;
+}
+
+/*Menu IndexLogim*/
+#menuIL a {
+	text-decoration: none;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #273237;
+	text-align:center;
+}
+#menuIL a:hover {
+	text-decoration:underline;
+	font-family: 'Abel', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight:bold;
+	color: #273237;
+	/*background-color:#273237;*/
+	text-align:center;
+}
+
+
+/** PAGE */
+#page {
+	overflow: hidden;
+	width: 900px;
+	margin: 0px auto;
+	padding: 0px 0px 40px 0px;
+	background: #FFFFFF url(images/page-content-bg.png) repeat-y center top;
+	border: 1px solid #B2B9BD;
+	box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, .1);
+	border-radius: 5px;
+}
+
+/** CONTENT */
+#content {
+	float: left;
+	width: 540px;
+	padding: 40px 30px 0px 30px;
+}
+
+/** SIDEBAR */
+#sidebar {
+	float: right;
+	width: 300px;
+	text-shadow: 1px 1px 0px #FFFFFF;
+}
+#sidebar .title {
+	display: block;
+	width: 240px;
+	height: 59px;
+	margin-bottom: 20px;
+	padding: 0px 30px 0px 30px;
+	background: url(imagens/sidebar-title-bg.png) no-repeat right top;
+	line-height: 59px;
+	text-shadow: 1px 1px 1px #161C1F;
+	font-family: 'Abel', sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	color: #FFFFFF;
+}
+#sidebar p {
+	margin: 0px 30px;
+}
+#sidebar ul {
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	list-style: none;
+}
+#sidebar li {
+	margin: 0px 30px 0px 30px;
+	padding: 10px 0px 10px 0px;
+	background: url(imagens/sidebar-separator-bg.png) repeat-x left top;
+}
+#sidebar li a {
+	display: block;
+}
+#sidebar .first {
+	background: none;
+}
+
+/** FOOTER */
+#footer {
+	overflow: hidden;
+	height: 130px;
+}
+#footer p {
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+	text-shadow: 1px 1px 1px #FFFFFF;
+	font-family: 'Abel', sans-serif;
+	font-size: 14px;
+	color: #6F7071;
+}
+#footer a {
+	color: #6F7071;
+}
+#banner {
+	overflow: hidden;
+	width: 900px;
+	margin: 20px auto;
+	background-color: #FFFFFF;
+	border: 1px solid #B2B9BD;
+	border-radius: 5px;
+	box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, .1);
+}
+
+#banner .image-border {
+	padding: 15px;
+}
+
+/** POST STYLE  */
+.post {
+	overflow: hidden;
+}
+.post .title {
+	display: block;
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	letter-spacing: -3px;
+	font-size: 40px;
+	color: #2E2E2E;
+}
+.post .entry {
+}
+
+.post .img-style1 {
+	margin-bottom: 20px;
+}
+.post .posted {
+	margin-top: -5px;
+	padding: 0px 0px 10px 0px;
+	font-family: 'Abel', sans-serif;
+	font-size: 16px;
+	color: #A9A9A9;
+}
+.post .posted a {
+	color: #A9A9A9;
+}
+.post .meta {
+	overflow: hidden;
+	display: block;
+	height: 50px;
+	margin-top: 30px;
+	padding: 0px 20px;
+	border: 1px solid #CDCDCD;
+	box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 1);
+	background: url(images/meta-bg.jpg) repeat-x left top;
+	text-shadow: 1px 2px 0px rgba(255, 255, 255, 1);
+	font-family: 'Abel', sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	color: #535353;
+}
+.post .meta a {
+	color: #535353;
+}
+.post .meta .listed {
+	float: left;
+	padding-right: 25px;
+	line-height: 50px;
+	background: url(imagens/meta-separator-bg.png) no-repeat right 50%;
+}
+.post .meta .tags {
+	float: left;
+	padding-left: 20px;
+	line-height: 50px;
+}
+.post .meta .comments {
+	float: right;
+	line-height: 50px;
+}
+.post .img-margin {
+	margin-bottom: 30px;
+}
