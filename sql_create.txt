@@ -139,6 +139,11 @@ CREATE TABLE t_visitantes (
   FOREIGN KEY (codInt) REFERENCES t_internamentos (codInt)
 )
 
+O código precisa de pelo menos 1 utilizador para poder ser usado, Fica aqui o utilizado no desenvolvimento, com password igual ao username:
+
+INSERT INTO t_utilizador VALUES(1, 'Administrador', 'admin123', 'f865b53623b121fd34ee5426c792e5c33af8c227', 'admin@gmail.com', 'Administrador', CURRENT_TIMESTAMP);
+
+
 Exemplo de dados na tabela t_especialidade:
 
 INSERT INTO t_especialidade (codEsp, enome, preco) VALUES
